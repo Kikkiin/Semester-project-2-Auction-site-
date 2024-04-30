@@ -6,4 +6,27 @@ export const REGISTER_URL = "/auth/register";
 export const API_LISTINGS_URL = "/auction/listings";
 export const API_PROFILE_URL = "/auction/profiles";
 
-// export const API_AUCTION_HOUSE_URL = `${API_BASE}${API_AUCTION_HOUSE}`;
+export const API_KEY_URL = "/auth/create-api-key";
+
+import { load } from "../storage/localStorage.mjs";
+
+export async function getAPIKey() {
+  const response = await fetch(API_BASE_URL + API_KEY_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${load("token")}`,
+    },
+    body: JSON.stringify({
+      name: "Test key",
+    }),
+  });
+
+  if (response.ok) {
+    return await response.json();
+  }
+  console.error(await response.json());
+  throw new Error("Could not register for an API key");
+}
+
+getAPIKey().then(console.log);

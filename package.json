@@ -1,0 +1,32 @@
+{
+  "name": "auction-site",
+  "version": "1.0.0",
+  "description": "A web-based auction platform where users can bid on items and manage their listings. This project uses Bootstrap and SCSS for styling.",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass scss/styles.scss:dist/css/styles.css --no-source-map",
+    "watch": "sass --watch src/scss:dist/css & live-server dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kikkiin/Semester-project-2-Auction-site-"
+  },
+  "keywords": [
+    "auction",
+    "web",
+    "bid",
+    "listings",
+    "bootstrap",
+    "scss"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "node-sass": "^9.0.0",
+    "prettier": "^3.2.5"
+  },
+  "author": "Kristin Kristiansen",
+  "license": "ISC"
+}

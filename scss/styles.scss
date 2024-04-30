@@ -1,0 +1,11 @@
+// Configuration
+// @import "variables";
+
+// Bootstrap min file
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// My custom compontents
+@import "layout";
+@import "navbar";
+@import "login";
+@import "register";

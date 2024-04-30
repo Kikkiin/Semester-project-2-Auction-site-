@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Infinity Market</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ml-auto">
+            <a class="nav-item" href="#">My account</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-content bg-dark py-5">
+        <div class="container">
+          <h3 class="mb-4 text-white">
+            Join our next auction! Find your equipment here
+          </h3>
+          <div class="search-container my-2">
+            <form class="form-inline justify-content-center">
+              <input
+                class="form-control-sm w-50 mb-3"
+                type="search"
+                placeholder="Find your equipment here"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container mt-3">
+        <h2 class="fw-light">Explore categories</h2>
+        <div class="row">
+          <div
+            class="col-6 col-md-4 col-lg-2 category"
+            data-category="furniture"
+          >
+            <img
+              src="images/furniture.jpg"
+              alt="Furniture"
+              class="img-fluid rounded-circle"
+              style="width: 100px; height: 100px"
+            />
+            <p>Furniture</p>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2 category"
+            data-category="electronics"
+          >
+            <img
+              src="images/electronics.jpg"
+              alt="Electronics"
+              class="img-fluid rounded-circle"
+              style="width: 100px; height: 100px"
+            />
+            <p>Electronics</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 category" data-category="clothes">
+            <img
+              src="images/clothes.jpg"
+              alt="Clothes"
+              class="img-fluid rounded-circle"
+              style="width: 100px; height: 100px"
+            />
+            <p>Clothes</p>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2 category"
+            data-category="veichles"
+          >
+            <img
+              src="images/veichles.jpg"
+              alt="Veichles"
+              class="img-fluid rounded-circle"
+              style="width: 100px; height: 100px"
+            />
+            <p>Veichles</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 category" data-category="antics">
+            <img
+              src="images/antics.jpg"
+              alt="Antics"
+              class="img-fluid rounded-circle"
+              style="width: 100px; height: 100px"
+            />
+            <p>Antics</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 category" data-category="watches">
+            <img
+              src="images/watches.jpg"
+              alt="Watches"
+              class="img-fluid rounded-circle"
+              style="width: 100px; height: 100px"
+            />
+            <p>Watches</p>
+          </div>
+          <!-- Category items would be populated here -->
+        </div>
+
+        <h2 class="fw-light mt-4">Trending auctions</h2>
+        <div class="row">
+          <!-- Auction items would be populated here -->
+        </div>
+
+        <h2 class="fw-light mt-4">Premier sellers</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img
+                  src="images/emily.jpg"
+                  alt="Emily Johnson"
+                  class="img-fluid rounded-circle"
+                  style="width: 70px; height: 70px"
+                />
+                <h5 class="card-title">Emily Johnson</h5>
+                <p class="card-text">Lorem ipsum</p>
+                <div class="card-rating">
+                  <!-- Add star icons here -->
+                  ★★★★★
+                </div>
+                <a href="#" class="stretched-link">→</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img
+                  src="images/michael.jpg"
+                  alt="Michael Smith"
+                  class="img-fluid rounded-circle"
+                  style="width: 70px; height: 70px"
+                />
+                <h5 class="card-title">Emily Johnson</h5>
+                <p class="card-text">Lorem ipsum</p>
+                <div class="card-rating">
+                  <!-- Add star icons here -->
+                  ★★★★★
+                </div>
+                <a href="#" class="stretched-link">→</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img
+                  src="images/john.jpg"
+                  alt="John Davis"
+                  class="img-fluid rounded-circle"
+                  style="width: 70px; height: 70px"
+                />
+                <h5 class="card-title">Emily Johnson</h5>
+                <p class="card-text">Lorem ipsum</p>
+                <div class="card-rating">
+                  <!-- Add star icons here -->
+                  ★★★★★
+                </div>
+                <a href="#" class="stretched-link">→</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img
+                  src="images/sarah.jpg"
+                  alt="Sarah Brown"
+                  class="img-fluid rounded-circle"
+                  style="width: 70px; height: 70px"
+                />
+                <h5 class="card-title">Emily Johnson</h5>
+                <p class="card-text">Lorem ipsum</p>
+                <div class="card-rating">
+                  <!-- Add star icons here -->
+                  ★★★★★
+                </div>
+                <a href="#" class="stretched-link">→</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img
+                  src="images/david.jpg"
+                  alt="David Wilson"
+                  class="img-fluid rounded-circle"
+                  style="width: 70px; height: 70px"
+                />
+                <h5 class="card-title">Emily Johnson</h5>
+                <p class="card-text">Lorem ipsum</p>
+                <div class="card-rating">
+                  <!-- Add star icons here -->
+                  ★★★★★
+                </div>
+                <a href="#" class="stretched-link">→</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <img
+                  src="images/james.jpg"
+                  alt="James Martinez"
+                  class="img-fluid rounded-circle"
+                  style="width: 70px; height: 70px"
+                />
+                <h5 class="card-title">Emily Johnson</h5>
+                <p class="card-text">Lorem ipsum</p>
+                <div class="card-rating">
+                  <!-- Add star icons here -->
+                  ★★★★★
+                </div>
+                <a href="#" class="stretched-link">→</a>
+              </div>
+            </div>
+          </div>
+          <!-- Seller profiles would be populated here -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Infinity Market</h5>
+            <p>
+              Join our community of auction enthusiasts and find the items you
+              love.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">Shop</a></li>
+              <li><a href="#" class="text-white">Blog</a></li>
+              <li><a href="#" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>123 Auction Lane<br />Marketplace City, MP 45678</p>
+            <p>Email: support@infinitymarket.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

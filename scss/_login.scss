@@ -1,0 +1,91 @@
+.login-background {
+  background: #802e4f;
+}
+
+// .login-background {
+//   background-image: url("../images/pinkcarbg.jpg");
+//   background-size: cover;
+//   background-position: center;
+//   height: 100vh; /* Legg til denne linjen for å sette høyden til fullskjerm */
+// }
+
+.login-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.login-image {
+  width: 100%;
+}
+
+.login-branding {
+  padding: 100px 0;
+  margin: -15px -15px 15px -15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  // background-color: transparent;
+}
+.login-branding h2 {
+  font-family:
+    "kanit",
+    sans serif;
+  // text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  // background-color: #edacc6;
+}
+
+.form-group {
+  margin-left: 20;
+}
+
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #000; /* Svart underlinje */
+  border-radius: 0; /* Fjerner avrunding */
+  padding-left: 0;
+  font-size: 1.25rem; /* Større font */
+}
+.btn-primary {
+  border-radius: 20px; /* Runde knappekanter */
+}
+
+.register-button {
+  color: #000;
+}
+
+// @media (min-width: 992px) {
+//   /* Bootstrap's 'lg' breakpoint */
+//   .custom-background {
+//     flex-direction: row;
+//     padding: 0 4rem; /* Horisontal padding */
+//   }
+//   .login-branding,
+//   .login-form {
+//     flex: 1;
+//   }
+//   .login-branding {
+//     max-width: 50%;
+//     background-image: url("../images/loginbg.png");
+//     background-size: cover;
+//     background-position: center;
+//     border-top-left-radius: 5px;
+//     border-bottom-left-radius: 5px;
+//     padding: 2rem;
+//     margin-right: 2rem; /* Avstand mellom bildet og form */
+//   }
+//   .login-form {
+//     max-width: 50%;
+//     padding: 2rem;
+//   }
+// }

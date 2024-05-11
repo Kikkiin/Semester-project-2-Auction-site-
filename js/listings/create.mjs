@@ -1,11 +1,11 @@
-// import { API_KEY } from "../auth/api.mjs";
 import { API_BASE_URL } from "../auth/api.mjs";
 import { API_LISTINGS_URL } from "../auth/api.mjs";
 import { customFetch } from "../fetch/fetch.mjs";
+import { displayListings } from "../ui/display.mjs";
 
 // const action = "/auction/listings";
 
-export async function createListings(listingData) {
+export async function createListing(listingData) {
   const createListingURL = API_BASE_URL + API_LISTINGS_URL;
   //   const accessToken = load("token");
 
@@ -14,28 +14,44 @@ export async function createListings(listingData) {
     body: JSON.stringify(listingData),
   });
 
+  console.log("Sending this data to API:", listingData);
+
   const listing = await response.json();
-  //   console.log(listing);
+  console.log(listing);
 
   return listing;
 }
 
-// export async function createListings(title, content, image) {
-//   const response = await fetch(API_LISTINGS_URL, {
-//     headers: {
-//       Authorization: `Bearer ${load("token")}`,
-//       "X-Noroff-API-Key": API_KEY,
-//       "Content-Type": "application/json",
-//     },
-//     method: "POST",
-//     body: JSON.stringify({
-//       title: title,
-//       body: content,
-//       media: { url: image, alt: "" },
-//     }),
-//   });
-//   return await response.json();
-// }
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Form submit event triggered");
+  const form = document.getElementById("listingForm");
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-// import { API_KEY } from "../auth/api.mjs";
-// import { load } from "../storage/localStorage.mjs";
+    const title = document.getElementById("title").value;
+    const media = document.getElementById("mediaURL").value;
+    const description = document.getElementById("description").value;
+    const endsAt = document.getElementById("endsAt").value;
+
+    const listingData = {
+      title: title,
+      media: [
+        {
+          url: media,
+          alt: "Image of listing " + title,
+        },
+      ],
+      description: description,
+      tags: [tags],
+
+      endsAt: endsAt,
+    };
+
+    try {
+      const createdListing = await createListing(listingData);
+      displayListings(createdListing);
+    } catch (error) {
+      console.error("Error creating listing:", error);
+    }
+  });
+});

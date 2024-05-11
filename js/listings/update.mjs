@@ -11,6 +11,7 @@ export async function updateListings(listingData) {
   });
 
   const listing = await response.json();
+  console.log(listing);
 
   return listing;
 }

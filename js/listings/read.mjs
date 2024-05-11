@@ -2,8 +2,13 @@ import { API_BASE_URL } from "../auth/api.mjs";
 import { API_LISTINGS_URL } from "../auth/api.mjs";
 import { customFetch } from "../fetch/fetch.mjs";
 
-export async function getListings() {
-  const getListingURL = `${API_BASE_URL}${API_LISTINGS_URL}`;
+export async function getListings(
+  page = 1,
+  limit = 100,
+  sortBy = "created",
+  order = "desc"
+) {
+  const getListingURL = `${API_BASE_URL}${API_LISTINGS_URL}?page=${page}&limit=${limit}&sort=${sortBy}&order=${order}`;
 
   const response = await customFetch(getListingURL);
 

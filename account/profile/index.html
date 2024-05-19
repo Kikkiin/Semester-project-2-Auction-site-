@@ -16,7 +16,11 @@
       rel="stylesheet"
     />
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../../js/index.mjs" defer type="module"></script>
+    <script defer src="../../js/index.mjs"type="module"></script>
+    <script defer src="../../js/ui/displayCredit.mjs" type="module" ></script>
+    <!-- <script defer src="../../js/profile/read.mjs" type="module"></script>
+    <script defer src="../../js/profile/update.mjs" type="module"></script>
+    <script defer src="../../js/ui/updateProfile.mjs" type="module"></script> -->
 
     <style>
         .custom-img-profile {
@@ -34,6 +38,64 @@
   height: 200px;      /* Fast høyde for alle bilder */
   object-fit: cover;  /* Bevarer aspektforholdet mens bildet fyller containeren */
   border-radius: 5px; /* Myke kanter */
+}
+
+.link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.link:hover {
+    background-color: #e9e9e9;
+}
+
+
+/* Initial hidden state of the modal */
+
+.modal {
+    display: none; /* Keeps the modal hidden by default */
+    position: fixed; /* Positions the modal relative to the viewport */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1000; /* Ensures the modal is on top of other content */
+}
+
+
+
+
+.modal-content {
+    position: relative;
+    background-color: #ffffff; /* White background for the content */
+    margin: 10% auto; /* Centers the modal content vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888; /* Light grey border */
+    width: 30%; /* Half of the viewport width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for 3D effect */
+    border-radius: 5px; /* Rounded corners for the modal content */
+    text-align: center; /* Centers text within the modal content */
+}
+
+/* Close button styles */
+.close {
+    color: #aaa; /* Light grey color for the close button */
+    position: absolute; /* Positioning relative to the modal content */
+    right: 10px; /* Positions the close button 10 pixels from the left edge */
+    top: 10px; /* Positions the close button 10 pixels from the top */
+    font-size: 28px; /* Larger font size for better clickability */
+    font-weight: bold;
+    cursor: pointer; /* Changes the mouse cursor to a pointer on hover */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Changes color when hovered or focused for better visibility */
+    text-decoration: none;
 }
         
     </style>
@@ -58,10 +120,10 @@
     
               <div class="collapse navbar-collapse justify-content-center">
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Notifications</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Messages</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">New listing</a></li>
+                  <li class="nav-item"><a class="nav-link" href="../../listings/create/index.html">New listing</a></li>
                 </ul>
               </div>
               <button onclick="logout()" class="btn btn-danger">Log Out</button>
@@ -90,9 +152,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-4 p-5 text-center text-lg-start">
-                    <img src="../../images/emily.jpg" alt="profile image" class="img-fluid custom-img-profile mt-3 mb-3">
-                    <h3>Emily Johnson</h3>
-                    <p class="text-muted">@emily</p>
+                    <img id="avatarImage" src="../../images/defaultavatar.png" alt="profile image" class="img-fluid custom-img-profile mt-3 mb-3">
+                  
+                    <p id="profileName" class="text-muted">@</p>
                 </div>
                 <div class="col-12 col-lg-4 p-5 border-top">
                     <div class="row">
@@ -123,15 +185,28 @@
         </div>
         <div class="container">
             <div class="d-flex justify-content-center gap-5 py-4 border-top">
-                <div>
-                    <p>📎 new listings</p>
+                <div class="link-container">
+                    <a href="../../listings/create/index.html" class="link">
+                        <p>📎 new listings</p>
+                    </a>
                 </div>
-                <div>
-                    <p>✂️ edit profile</p>
+                <div class="link-container">
+                    <a href="./edit/index.html" class="link">
+                        <p>✂️ edit profile</p>
+                    </a>
                 </div>
-                <div>
-                    <p>💰 credit</p>
+                <div class="link-container">
+                    <a id="creditButton" class="link">
+                        <p>💰 credit</p>
+                    </a>
                 </div>
+                <div id="creditModal" class="modal">
+                    <div class="modal-content">
+                    <p>Your credit balance is: <span id="creditAmount"></span>  💸</p>
+                    <span class="close">&times;</span>
+
+                </div>
+            </div>
             </div>
         </div>
         

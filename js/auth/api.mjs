@@ -6,6 +6,7 @@ export const REGISTER_URL = "/auth/register";
 
 export const API_LISTINGS_URL = "/auction/listings";
 export const API_PROFILE_URL = "/auction/profiles";
+// export const API_BIDS_URL = "/auction/listings/<id>/bids";
 
 export const API_KEY_URL = "/auth/create-api-key";
 

@@ -1,47 +1,67 @@
-export async function displayDetailListing(listingId) {
-  const container = document.querySelector("#detail-listing-container");
+console.log("Script loaded");
 
-  if (!container) {
-    console.error("Detail listing container not found");
-    return;
+// Anta at filnavnet er `details.js`
+import { getListing } from "../listing/read.mjs";
+import { getBidsForListing } from "../bids/create.mjs";
+
+async function displayListingDetails(id) {
+  const listingDetails = await getListing(id);
+  console.log("Fetching listing;", listingDetails);
+
+  const bids = await getBidsForListing(id);
+
+  const container = document.getElementById("listing-detail-container");
+  container.innerHTML = ""; // Tømmer containeren først for å unngå duplisering av innhold
+
+  // Vis oppføringsdetaljer
+  const title = document.createElement("h1");
+  title.textContent = listingDetails.title;
+  container.appendChild(title);
+
+  // Vis bilde
+  if (listingDetails.media && listingDetails.media.length > 0) {
+    const img = document.createElement("img");
+    img.src = listingDetails.media[0].url; // Anta at det første bildet i arrayet skal vises
+    img.alt = listingDetails.media[0].alt || "Listing Image";
+    img.style.width = "100%"; // Full bredde, kan justeres etter behov
+    container.appendChild(img);
   }
 
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}${API_LISTINGS_URL}/${listingId}`
-    );
-    const listing = await response.json();
+  // Vis detaljert beskrivelse
+  const description = document.createElement("p");
+  description.textContent = listingDetails.description;
+  container.appendChild(description);
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch listing details");
-    }
+  // Knapp for å gi bud
+  const bidButton = document.createElement("button");
+  bidButton.textContent = "Gi Bud";
+  bidButton.onclick = function () {
+    console.log("Bid button clicked!");
+  };
+  container.appendChild(bidButton);
 
-    container.innerHTML = ""; // Clear the container
-    const listingDetailHtml = detailListing(listing);
-    container.appendChild(listingDetailHtml);
-  } catch (error) {
-    console.error("Error fetching listing details:", error);
-    container.textContent =
-      "Error loading listing details. Please try again later.";
-  }
+  // Vis nylige bud
+  const bidsTitle = document.createElement("h2");
+  bidsTitle.textContent = "Nylige bud";
+  container.appendChild(bidsTitle);
+
+  const bidsList = document.createElement("ul");
+  bids.forEach((bid) => {
+    const bidItem = document.createElement("li");
+    bidItem.textContent = `${bid.bidder.name}: ${bid.amount} $`;
+    bidsList.appendChild(bidItem);
+  });
+  container.appendChild(bidsList);
 }
 
-function detailListing(listing) {
-  const listingContainer = document.createElement("div");
-  listingContainer.className = "listing-detail";
+// Få listingId fra URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+console.log("Listing ID fetched from URL:", id);
 
-  const title = document.createElement("h2");
-  title.textContent = listing.title;
-  listingContainer.appendChild(title);
-
-  const image = document.createElement("img");
-  media.src = listing.media;
-  media.alt = "Image of " + listing.title;
-  listingContainer.appendChild(image);
-
-  const description = document.createElement("p");
-  description.textContent = listing.description;
-  listingContainer.appendChild(description);
-
-  return listingContainer;
+if (id) {
+  console.log("Calling displayListingDetails with ID:", id);
+  displayListingDetails(id);
+} else {
+  console.error("No ID found in the URL");
 }

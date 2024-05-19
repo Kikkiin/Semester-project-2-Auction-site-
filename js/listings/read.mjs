@@ -19,6 +19,7 @@ export async function getListings(
 
 export async function getListing(id) {
   const getListingURL = `${API_BASE_URL}${API_LISTINGS_URL}/${id}`;
+  console.log("Making API call to:", getListingURL);
 
   const response = await customFetch(getListingURL);
 

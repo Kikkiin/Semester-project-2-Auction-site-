@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../../../dist/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="../../../js/index.mjs" type="module"></script>
+    <!-- <script defer src="../../../js/profile/read.mjs" type="module"></script> -->
+    <script defer src="../../../js/profile/update.mjs" type="module"></script>
+
+    <script
+      defer
+      src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <style>
+      .custom-img-profile {
+        width: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Infinity Market</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../../listings/create/index.html"
+                  >New listing</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="ml-auto">
+            <a class="nav-item" href="account/profile/index.html">My account</a>
+          </div>        
+      </nav>
+    </header>
+    <div class="container mt-5">
+      <h2>Edit Your Profile</h2>
+      <form id="editProfile" class="mt-4">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="avatar" class="form-label">Avatar URL</label>
+          <input type="text" class="form-control" id="avatar" name="avatar" />
+          <img
+            id="avatarImage"
+            src="../../../images/defaultavatar.png"
+            alt="Avatar"
+            class="img-fluid custom-img-profile mt-3"
+          />
+        </div>
+        <!-- <div class="mb-3">
+          <label for="banner" class="form-label">Banner URL</label>
+          <input type="text" class="form-control" id="banner" name="banner" />
+        </div> -->
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+      </form>
+    </div>
+  </body>
+</html>

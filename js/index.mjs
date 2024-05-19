@@ -5,11 +5,15 @@ import { logout } from "./logout/logout.mjs";
 // import { createListing } from "./listings/create.mjs";
 // import { updateListings } from "./listings/update.mjs";
 // import { removeListings } from "./listings/delete.mjs";
-import { getListing, getListings } from "./listings/read.mjs";
+// import { getListing, getListings } from "./listings/read.mjs";
 import { displayListings } from "./ui/display.mjs";
+// import { updateProfile } from "./profile/update.mjs";
+import { handleUpdateProfile } from "./ui/updateProfile.mjs";
 // import { updateListings } from "./listings/update.mjs";
 
 // import { displayUpdatedListing } from "./handlers/updateListing.mjs";
+
+// import { displayListingDetails } from "./ui/displayDetailListing.mjs";
 
 setRegisterFormListener();
 setLoginFormListener();
@@ -54,9 +58,11 @@ function getValidEndsAtDate() {
 
 // removeListings("e482b2a3-10d1-4947-9688-15c04f0ae623");
 
-getListings().then(console.log);
+// getListings().then(console.log);
 
-getListing("4df8e20f-1160-4746-9ba1-67ab27dfd6c0").then(console.log);
+// getListing();
+
+// getListing("4df8e20f-1160-4746-9ba1-67ab27dfd6c0").then(console.log);
 
 displayListings();
 
@@ -75,9 +81,9 @@ async function updateHomepageWithNewListings() {
 
 // Kall funksjonen etter at en ny listing er opprettet
 // For eksempel etter at en listing er laget
-createNewListing().then(() => {
-  updateHomepageWithNewListings();
-});
+// createNewListing().then(() => {
+//   updateHomepageWithNewListings();
+// });
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   displayListings();
@@ -93,5 +99,16 @@ createNewListing().then(() => {
 //   if (event.target.matches(".listing-link")) {
 //     const listingId = event.target.dataset.listingId;
 //     displayDetailListing(listingId);
+//   }
+// });
+
+handleUpdateProfile();
+
+// window.getBidsForListing = getBidsForListing; // Gjør funksjonen tilgjengelig som en global variabel
+
+// document.addEventListener("click", function (event) {
+//   if (event.target.matches(".listing-link")) {
+//     const listingId = event.target.dataset.listingId;
+//     displayListingDetails(listingId);
 //   }
 // });

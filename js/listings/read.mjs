@@ -17,13 +17,22 @@ export async function getListings(
   return listing;
 }
 
+// export async function getListing(id) {
+//   const getListingURL = `${API_BASE_URL}${API_LISTINGS_URL}/${id}`;
+
+//   const response = await customFetch(getListingURL);
+
+//   const listing = await response.json();
+
+//   return listing;
+// }
+
 export async function getListing(id) {
   const getListingURL = `${API_BASE_URL}${API_LISTINGS_URL}/${id}`;
-  console.log("Making API call to:", getListingURL);
-
   const response = await customFetch(getListingURL);
-
-  const listing = await response.json();
-
-  return listing;
+  if (!response.ok) {
+    throw new Error("Failed to fetch listing");
+  }
+  const data = await response.json();
+  return data.data; // Returner data-delen av responsen
 }

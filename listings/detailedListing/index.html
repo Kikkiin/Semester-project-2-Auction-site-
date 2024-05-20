@@ -20,13 +20,53 @@
       defer
     ></script>
 
-    <script src="../../js/index.mjs" defer type="module"></script>
+    <!-- <script src="../../js/index.mjs" defer type="module"></script> -->
     <script
       src="../../js/ui/displayDetailListing.mjs"
       defer
       type="module"
     ></script>
     <script src="../../js/listings/read.mjs" defer type="module"></script>
+    <style>
+      .bid-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .bid-input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .bid-submit {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .bid-submit:hover {
+        background-color: #0056b3;
+      }
+
+      /* CSS for clickable bid history */
+      .clickable {
+        cursor: pointer;
+        color: #007bff;
+      }
+
+      .clickable:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -72,7 +112,36 @@
     </header>
     <main>
       <div class="container mt-5 mb-5">
-        <div id="listing-detail-container"></div>
+        <div id="listing-detail-container">
+          <ul id="bids-list"></ul>
+        </div>
+        <!-- Modal for budhistorikk -->
+        <div
+          class="modal fade"
+          id="bid-history-modal"
+          tabindex="-1"
+          aria-labelledby="bidHistoryModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="bidHistoryModalLabel">
+                  Bid History
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body" id="bid-history">
+                <!-- Budhistorikk vil bli lagt til her -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="bg-dark text-white pt-4 pb-2">

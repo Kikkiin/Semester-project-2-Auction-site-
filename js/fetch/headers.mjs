@@ -21,3 +21,10 @@ export function headers(hasBody = false) {
 
   return headers;
 }
+
+export async function customFetch(url, options = {}) {
+  return fetch(url, {
+    ...options,
+    headers: headers(options.body),
+  });
+}

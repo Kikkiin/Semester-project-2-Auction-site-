@@ -9,8 +9,12 @@ export async function getListings(
   order = "desc"
 ) {
   const getListingURL = `${API_BASE_URL}${API_LISTINGS_URL}?page=${page}&limit=${limit}&sort=${sortBy}&order=${order}`;
-
+  console.log("Fetching from URL:", getListingURL);
   const response = await customFetch(getListingURL);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch listings");
+  }
 
   const listing = await response.json();
 

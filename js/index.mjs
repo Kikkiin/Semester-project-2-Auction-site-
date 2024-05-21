@@ -28,15 +28,18 @@ if (path === "/profile/login/") {
 
 window.logout = logout;
 
-function getValidEndsAtDate() {
-  const today = new Date();
-  const sixMonthsFromNow = new Date(
-    today.getFullYear(),
-    today.getMonth() + 6,
-    today.getDate()
-  );
-  return sixMonthsFromNow.toISOString(); // Konverter til ISO 8601 format
-}
+import { setupSearchHandler } from "./handlers/searchListing.mjs";
+setupSearchHandler();
+
+// function getValidEndsAtDate() {
+//   const today = new Date();
+//   const sixMonthsFromNow = new Date(
+//     today.getFullYear(),
+//     today.getMonth() + 6,
+//     today.getDate()
+//   );
+//   return sixMonthsFromNow.toISOString(); // Konverter til ISO 8601 format
+// }
 
 // createListing();
 
@@ -67,17 +70,17 @@ function getValidEndsAtDate() {
 displayListings();
 
 // Funksjon for å hente og oppdatere hjemmesiden med de nyeste listings
-async function updateHomepageWithNewListings() {
-  try {
-    const response = await fetch(`${API_BASE_URL}/auction/listings`);
-    const data = await response.json();
+// async function updateHomepageWithNewListings() {
+//   try {
+//     const response = await fetch(`${API_BASE_URL}/auction/listings`);
+//     const data = await response.json();
 
-    // Implementer logikken for å oppdatere hjemmesiden med de nyeste listingsene
-    // For eksempel, legg til de nye listingsene på hjemmesiden
-  } catch (error) {
-    console.error("Feil ved henting av nyeste listings:", error);
-  }
-}
+//     // Implementer logikken for å oppdatere hjemmesiden med de nyeste listingsene
+//     // For eksempel, legg til de nye listingsene på hjemmesiden
+//   } catch (error) {
+//     console.error("Feil ved henting av nyeste listings:", error);
+//   }
+// }
 
 // Kall funksjonen etter at en ny listing er opprettet
 // For eksempel etter at en listing er laget

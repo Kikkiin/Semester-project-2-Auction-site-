@@ -1,0 +1,38 @@
+.bid-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.bid-input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.bid-submit {
+  padding: 10px 20px;
+  background-color: #c44578;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bid-submit:hover {
+  background-color: #0056b3;
+}
+
+/* CSS for clickable bid history */
+.clickable {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}

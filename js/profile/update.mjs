@@ -18,10 +18,6 @@ export async function updateProfile(profileData) {
           url: profileData.avatar,
           alt: profileData.avatar,
         },
-        // banner: {
-        //   url: profileData.banner.url,
-        //   alt: profileData.banner.alt,
-        // },
       }),
     });
 

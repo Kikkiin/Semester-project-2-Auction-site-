@@ -19,54 +19,12 @@
       src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
-
-    <!-- <script src="../../js/index.mjs" defer type="module"></script> -->
     <script
       src="../../js/ui/displayDetailListing.mjs"
       defer
       type="module"
     ></script>
     <script src="../../js/listings/read.mjs" defer type="module"></script>
-    <style>
-      .bid-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
-
-      .bid-input {
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .bid-submit {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .bid-submit:hover {
-        background-color: #0056b3;
-      }
-
-      /* CSS for clickable bid history */
-      .clickable {
-        cursor: pointer;
-        color: #007bff;
-      }
-
-      .clickable:hover {
-        text-decoration: underline;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -115,7 +73,7 @@
         <div id="listing-detail-container">
           <ul id="bids-list"></ul>
         </div>
-        <!-- Modal for budhistorikk -->
+
         <div
           class="modal fade"
           id="bid-history-modal"
@@ -136,9 +94,7 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body" id="bid-history">
-                <!-- Budhistorikk vil bli lagt til her -->
-              </div>
+              <div class="modal-body" id="bid-history"></div>
             </div>
           </div>
         </div>

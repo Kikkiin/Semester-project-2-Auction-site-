@@ -21,6 +21,9 @@ export async function createListing(listingData) {
   const listing = await response.json();
   console.log(listing);
 
+  alert("Listing created successfully!");
+  window.location.href = "/";
+
   return listing;
 }
 

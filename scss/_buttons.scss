@@ -1,6 +1,6 @@
 .bg-search {
   &:hover {
-    background-color: darken(white, 10%); // Mørkere farge ved hover
+    background-color: darken(white, 10%);
   }
 }
 
@@ -8,7 +8,7 @@
   background-color: #c44578;
 
   &:hover {
-    background-color: darken(#c44578, 10%); // Mørkere farge ved hover
+    background-color: darken(#c44578, 10%);
   }
 }
 
@@ -21,6 +21,27 @@
   border: none;
 
   &:hover {
-    background-color: darken(#c44578, 10%); // Mørkere farge ved hover
+    background-color: darken(#c44578, 10%);
+  }
+}
+
+#search-button {
+  &:hover {
+    background-color: darken(white, 20%);
+  }
+}
+
+#load-more-button {
+  &:hover {
+    background-color: darken(#c44578, 2%);
+  }
+}
+
+#follow-btn {
+  background-color: #c44578;
+  border: none;
+
+  &:hover {
+    background-color: darken(#c44578, 10%);
   }
 }

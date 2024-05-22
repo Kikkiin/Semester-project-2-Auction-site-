@@ -30,16 +30,20 @@ export async function handleUpdateProfile() {
 
       const updatedProfile = await updateProfile(profileData);
       if (updatedProfile) {
-        document.getElementById("avatarImage").src =
-          updatedProfile.avatar.url || "../../images/defaultavatar.png"; // Oppdaterer bildet
-        document.getElementById("profileName").textContent =
-          updatedProfile.name;
-
+        if (updatedProfile.avatar && updatedProfile.avatar.url) {
+          document.getElementById("avatarImage").src =
+            updatedProfile.avatar.url || "../../images/defaultavatar.png";
+        } else {
+          document.getElementById("profileName").textContent =
+            updatedProfile.name;
+        }
         localStorage.setItem("profile", JSON.stringify(updatedProfile));
 
-        window.location.href = "../../account/profile/index.html"; // Endre "profile.html" til den faktiske URLen til din profilside
+        alert(
+          "Profile updated successfully! Redirecting to your profile page..."
+        );
+        window.location.href = "../../account/profile/index.html";
       } else {
-        // Her kan du legge til feilhåndtering, f.eks. vise en feilmelding til brukeren
         alert("Failed to update profile. Please try again.");
       }
     });

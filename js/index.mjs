@@ -1,22 +1,9 @@
 import { setRegisterFormListener } from "./register/register.mjs";
 import { setLoginFormListener } from "./login/login.mjs";
 import { logout } from "./logout/logout.mjs";
-
-// import { createListing } from "./listings/create.mjs";
-// import { updateListings } from "./listings/update.mjs";
-// import { removeListings } from "./listings/delete.mjs";
-// import { getListing, getListings } from "./listings/read.mjs";
 import { displayListings } from "./ui/display.mjs";
-// import { updateProfile } from "./profile/update.mjs";
 import { handleUpdateProfile } from "./ui/updateProfile.mjs";
-// import { updateListings } from "./listings/update.mjs";
-
-// import { displayUpdatedListing } from "./handlers/updateListing.mjs";
-
-// import { displayListingDetails } from "./ui/displayDetailListing.mjs";
-
-setRegisterFormListener();
-setLoginFormListener();
+import { setupSearchHandler } from "./handlers/searchListing.mjs";
 
 const path = location.pathname;
 
@@ -28,8 +15,70 @@ if (path === "/profile/login/") {
 
 window.logout = logout;
 
-import { setupSearchHandler } from "./handlers/searchListing.mjs";
-// setupSearchHandler();
+document.addEventListener("DOMContentLoaded", () => {
+  displayListings();
+
+  if (document.getElementById("load-more-button")) {
+    let currentPage = 1;
+    document
+      .getElementById("load-more-button")
+      .addEventListener("click", () => {
+        currentPage++;
+        displayListings(currentPage, 5);
+      });
+  }
+
+  if (document.getElementById("editProfile")) {
+    handleUpdateProfile();
+  }
+
+  if (document.getElementById("search-form")) {
+    setupSearchHandler();
+  }
+});
+
+//// TEST ////
+
+// import { setRegisterFormListener } from "./register/register.mjs";
+// import { setLoginFormListener } from "./login/login.mjs";
+// import { logout } from "./logout/logout.mjs";
+// import { displayListings } from "./ui/display.mjs";
+// import { handleUpdateProfile } from "./ui/updateProfile.mjs";
+
+// setRegisterFormListener();
+// setLoginFormListener();
+
+// const path = location.pathname;
+
+// if (path === "/profile/login/") {
+//   setLoginFormListener();
+// } else if (path === "/profile/register/") {
+//   setRegisterFormListener();
+// }
+
+// window.logout = logout;
+
+// // import { setupSearchHandler } from "./handlers/searchListing.mjs";
+// // setupSearchHandler();
+
+// displayListings();
+
+// handleUpdateProfile();
+
+// let currentPage = 1;
+// document.getElementById("load-more-button").addEventListener("click", () => {
+//   currentPage++;
+//   displayListings(currentPage, 5);
+// });
+
+// import { createListing } from "./listings/create.mjs";
+// import { updateListings } from "./listings/update.mjs";
+// import { removeListings } from "./listings/delete.mjs";
+// import { getListing, getListings } from "./listings/read.mjs";
+// import { updateProfile } from "./profile/update.mjs";
+// import { updateListings } from "./listings/update.mjs";
+// import { displayUpdatedListing } from "./handlers/updateListing.mjs";
+// import { displayListingDetails } from "./ui/displayDetailListing.mjs";
 
 // function getValidEndsAtDate() {
 //   const today = new Date();
@@ -67,8 +116,6 @@ import { setupSearchHandler } from "./handlers/searchListing.mjs";
 
 // getListing("4df8e20f-1160-4746-9ba1-67ab27dfd6c0").then(console.log);
 
-displayListings();
-
 // Funksjon for å hente og oppdatere hjemmesiden med de nyeste listings
 // async function updateHomepageWithNewListings() {
 //   try {
@@ -105,8 +152,6 @@ displayListings();
 //   }
 // });
 
-handleUpdateProfile();
-
 // window.getBidsForListing = getBidsForListing; // Gjør funksjonen tilgjengelig som en global variabel
 
 // document.addEventListener("click", function (event) {
@@ -115,9 +160,3 @@ handleUpdateProfile();
 //     displayListingDetails(listingId);
 //   }
 // });
-
-let currentPage = 1;
-document.getElementById("load-more-button").addEventListener("click", () => {
-  currentPage++;
-  displayListings(currentPage, 5);
-});

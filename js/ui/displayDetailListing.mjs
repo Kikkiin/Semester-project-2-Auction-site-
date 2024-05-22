@@ -29,6 +29,8 @@ async function displayListingDetails(id) {
       img.src = listing.media[0].url;
       img.alt = listing.media[0].alt || "Listing Image";
       img.style.width = "100%";
+      img.classList.add("img-fluid", "mb-2", "w-50");
+      img.classList.add("listing-image");
       container.appendChild(img);
     }
 
@@ -49,7 +51,7 @@ async function displayListingDetails(id) {
       const submitButton = document.createElement("button");
       submitButton.type = "submit";
       submitButton.textContent = "Give bid";
-      submitButton.classList.add("bid-submit");
+      submitButton.classList.add("bid-submit", "bg-custom");
       bidForm.appendChild(bidInput);
       bidForm.appendChild(submitButton);
       container.appendChild(bidForm);

@@ -37,7 +37,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Infinity Market</a>
+          <a class="navbar-brand" href="./index.html">Infinity Market</a>
 
           <button
             class="navbar-toggler"
@@ -91,7 +91,7 @@
               />
               <button
                 id="search-button"
-                class="btn btn-outline-custom my-2 my-sm-0 text-white"
+                class="btn my-2 my-sm-0 text-white"
                 type="submit"
               >
                 Search
@@ -174,8 +174,16 @@
 
         <h2 class="fw-light mt-4">Trending auctions</h2>
         <div class="row">
-          <div>
-            <div id="listing-container"></div>
+          <div class="d-flex justify-content-center">
+            <div
+              id="listing-container"
+              class="d-flex flex-column align-items-center"
+            ></div>
+          </div>
+          <div class="text-center mt-4">
+            <button id="load-more-button" class="btn btn-load">
+              Load more
+            </button>
           </div>
         </div>
 

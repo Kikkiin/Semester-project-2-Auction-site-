@@ -35,13 +35,14 @@ export async function handleUpdateProfile() {
         document.getElementById("profileName").textContent =
           updatedProfile.name;
 
+        localStorage.setItem("profile", JSON.stringify(updatedProfile));
+
         window.location.href = "../../account/profile/index.html"; // Endre "profile.html" til den faktiske URLen til din profilside
       } else {
         // Her kan du legge til feilhåndtering, f.eks. vise en feilmelding til brukeren
         alert("Failed to update profile. Please try again.");
       }
     });
-
-    // updateProfile(profileData);
   }
+  // updateProfile(profileData);
 }

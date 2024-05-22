@@ -29,7 +29,7 @@ if (path === "/profile/login/") {
 window.logout = logout;
 
 import { setupSearchHandler } from "./handlers/searchListing.mjs";
-setupSearchHandler();
+// setupSearchHandler();
 
 // function getValidEndsAtDate() {
 //   const today = new Date();
@@ -115,3 +115,9 @@ handleUpdateProfile();
 //     displayListingDetails(listingId);
 //   }
 // });
+
+let currentPage = 1;
+document.getElementById("load-more-button").addEventListener("click", () => {
+  currentPage++;
+  displayListings(currentPage, 5);
+});

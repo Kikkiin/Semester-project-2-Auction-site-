@@ -1,0 +1,24 @@
+#listing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listing-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#listing-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listing-image {
+  width: 100%;
+  max-width: 600px;
+}

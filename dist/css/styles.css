@@ -11924,13 +11924,61 @@ textarea.form-control-lg {
 }
 
 .form-control:focus {
-  border-color: #6ca0ac;
+  border-color: #151616;
   box-shadow: none;
 }
 
 .btn-register {
   border-radius: 20px;
-  background-color: #6ca0ac;
+  background-color: #020202;
   border: none;
   padding: 10px;
+}
+
+#listing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listing-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#listing-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listing-image {
+  width: 100%;
+  max-width: 600px;
+}
+
+.bg-search:hover {
+  background-color: #e6e6e6;
+}
+
+.btn-load {
+  background-color: #c44578;
+}
+.btn-load:hover {
+  background-color: #a23460;
+}
+
+.bg-custom {
+  background-color: #c44578;
+}
+
+#submitBtn {
+  background-color: #c44578;
+  border: none;
+}
+#submitBtn:hover {
+  background-color: #a23460;
 }

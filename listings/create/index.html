@@ -22,18 +22,12 @@
     <script src="../../js/index.mjs" defer type="module"></script>
     <script src="../../js/listings/create.mjs" defer type="module"></script>
     <script src="../../js/ui/display.mjs" defer type="module"></script>
-    <!-- <script
-      src="../../js/ui/displayDetailListing.mjs"
-      defer
-      type="module"
-    ></script> -->
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Infinity Market</a>
-
+          <a class="navbar-brand" href="../../index.html">Infinity Market</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -74,8 +68,8 @@
     </header>
     <body>
       <div class="container mt-5 mb-5" id="detail-listing-container">
-        <h2>Create a New Listing</h2>
-        <form id="listingForm">
+        <h2 class="text-center">Create a New Listing</h2>
+        <form id="listingForm" class="mt-4 p-4 shadow-sm rounded bg-light">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" required />
@@ -108,9 +102,15 @@
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary" id="submitBtn">
-            Submit Listing
-          </button>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              id="submitBtn"
+            >
+              Submit Listing
+            </button>
+          </div>
         </form>
       </div>
     </body>

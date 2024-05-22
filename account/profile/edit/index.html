@@ -18,6 +18,7 @@
     <script defer src="../../../js/index.mjs" type="module"></script>
     <!-- <script defer src="../../../js/profile/read.mjs" type="module"></script> -->
     <script defer src="../../../js/profile/update.mjs" type="module"></script>
+    <script defer src="../../js/ui/updateProfile.mjs" type="module"></script>
 
     <script
       defer
@@ -34,7 +35,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Infinity Market</a>
+          <a class="navbar-brand" href="../../../index.html">Infinity Market</a>
 
           <button
             class="navbar-toggler"
@@ -68,13 +69,13 @@
           </div>
 
           <div class="ml-auto">
-            <a class="nav-item" href="account/profile/index.html">My account</a>
+            <a class="nav-item" href="../index.html">My account</a>
           </div>        
       </nav>
     </header>
     <div class="container mt-5">
-      <h2>Edit Your Profile</h2>
-      <form id="editProfile" class="mt-4">
+      <h2 class="text-center">Edit Your Profile</h2>
+      <form id="editProfile" class="mt-4 p-4 shadow-sm rounded bg-light">
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
           <input
@@ -102,15 +103,40 @@
             id="avatarImage"
             src="../../../images/defaultavatar.png"
             alt="Avatar"
-            class="img-fluid custom-img-profile mt-3"
+            class="img-fluid custom-img-profile mt-3 d-block mx-auto"
           />
         </div>
-        <!-- <div class="mb-3">
-          <label for="banner" class="form-label">Banner URL</label>
-          <input type="text" class="form-control" id="banner" name="banner" />
-        </div> -->
-        <button type="submit" class="btn btn-primary">Update Profile</button>
+        <div class="d-grid mb-4">
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Update Profile</button>
+        </div>
       </form>
     </div>
+    <footer class="bg-dark text-white pt-4 pb-2 mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Infinity Market</h5>
+            <p>
+              Join our community of auction enthusiasts and find the items you
+              love.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">Shop</a></li>
+              <li><a href="#" class="text-white">Blog</a></li>
+              <li><a href="#" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>123 Auction Lane<br />Marketplace City, MP 45678</p>
+            <p>Email: support@infinitymarket.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

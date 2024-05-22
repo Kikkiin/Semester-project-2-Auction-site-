@@ -1,0 +1,26 @@
+.bg-search {
+  &:hover {
+    background-color: darken(white, 10%); // Mørkere farge ved hover
+  }
+}
+
+.btn-load {
+  background-color: #c44578;
+
+  &:hover {
+    background-color: darken(#c44578, 10%); // Mørkere farge ved hover
+  }
+}
+
+.bg-custom {
+  background-color: #c44578;
+}
+
+#submitBtn {
+  background-color: #c44578;
+  border: none;
+
+  &:hover {
+    background-color: darken(#c44578, 10%); // Mørkere farge ved hover
+  }
+}

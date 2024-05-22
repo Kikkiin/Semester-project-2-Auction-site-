@@ -2,8 +2,8 @@ export function previewListing(listing) {
   const listingContainer = document.createElement("div");
   listingContainer.classList.add(
     "listing-container",
-    "col-md-4",
-    "mb-3",
+
+    "mb-4",
     "p-3",
     "border",
     "rounded"
@@ -24,6 +24,23 @@ export function previewListing(listing) {
     imageContainer.appendChild(img);
   });
 
+  if (listing.media && listing.media.length > 0) {
+    listing.media.forEach((media) => {
+      const img = document.createElement("img");
+      img.src = media.url;
+      img.alt = media.alt || "Listing Image";
+      img.classList.add("img-fluid", "mb-2", "w-100"); // Bruker Bootstrap-klasser for å justere størrelsen
+      imageContainer.appendChild(img);
+    });
+  } else {
+    const img = document.createElement("img");
+    img.src =
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp-_0eTvt-oVkIWlTPKpyVV5Bz2nR8YfZ19Q&s";
+    img.alt = "Default Listing Image";
+    img.classList.add("img-fluid", "mb-2", "w-100"); // Bruker Bootstrap-klasser for å justere størrelsen
+    imageContainer.appendChild(img);
+  }
+
   const title = document.createElement("h5");
   title.textContent = listing.title;
   title.classList.add("mt-2", "fw-bold");
@@ -42,7 +59,7 @@ export function previewListing(listing) {
 
   const bidCount = document.createElement("p");
   bidCount.textContent = `Bids: ${listing._count.bids}`;
-  bidCount.classList.add("badge", "bg-primary");
+  bidCount.classList.add("badge", "bg-custom");
 
   listingContainer.appendChild(imageContainer);
   listingContainer.appendChild(title);

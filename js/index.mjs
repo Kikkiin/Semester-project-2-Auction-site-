@@ -35,6 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("search-form")) {
     setupSearchHandler();
   }
+  if (document.getElementById("registration-form")) {
+    setRegisterFormListener();
+  }
+
+  // Sjekk for innloggingsskjema og sett opp lytter
+  if (document.getElementById("login-form")) {
+    setLoginFormListener();
+  }
 });
 
 //// TEST ////

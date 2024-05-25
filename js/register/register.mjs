@@ -4,7 +4,7 @@ export function setRegisterFormListener() {
   const form = document.querySelector("#registration-form");
 
   if (form) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const form = event.target;
@@ -13,7 +13,7 @@ export function setRegisterFormListener() {
       // console.log(profile);
 
       // send to the API
-      register(profile);
+      await register(profile);
     });
   }
 }
